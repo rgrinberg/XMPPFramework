@@ -291,6 +291,7 @@ typedef enum XMPPStreamErrorCode XMPPStreamErrorCode;
  * The xmppStreamDidDisconnect:withError: delegate method will immediately be dispatched onto the delegate queue.
 **/
 - (void)disconnect;
+- (void)disconnectWithAutoReconnect;
 
 /**
  * Disconnects from the remote host by sending the terminating </stream:stream> element,
