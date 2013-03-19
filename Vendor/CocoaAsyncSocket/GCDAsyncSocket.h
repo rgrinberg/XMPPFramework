@@ -1044,3 +1044,6 @@ typedef enum GCDAsyncSocketError GCDAsyncSocketError;
 - (void)socketDidSecure:(GCDAsyncSocket *)sock;
 
 @end
+
+void CFReadStreamCallback (CFReadStreamRef stream, CFStreamEventType type, void *pInfo);
+void CFWriteStreamCallback (CFWriteStreamRef stream, CFStreamEventType type, void *pInfo);
