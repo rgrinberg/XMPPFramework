@@ -44,10 +44,12 @@
 #endif
 
 // Log levels: off, error, warn, info, verbose
-#if DEBUG
-  static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO | XMPP_LOG_FLAG_SEND_RECV; // | XMPP_LOG_FLAG_TRACE;
-#else
+#if XMPP_DEBUG_MODE == 1
   static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
+#elif XMPP_DEBUG_MODE == 2
+  static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO | XMPP_LOG_FLAG_SEND_RECV | XMPP_LOG_FLAG_TRACE;
+#else
+  static const int xmppLogLevel = 0;
 #endif
 
 /**
@@ -947,7 +949,7 @@ enum XMPPStreamConfig
 			srvResultsIndex = 0;
 			
 			NSString *srvName = [XMPPSRVResolver srvNameFromXMPPDomain:[myJID_setByClient domain]];
-			
+			            
 			[srvResolver startWithSRVName:srvName timeout:30.0];
 			
 			result = YES;
