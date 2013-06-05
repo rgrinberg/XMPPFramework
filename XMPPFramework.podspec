@@ -5,7 +5,7 @@
 # To learn more about the attributes see http://docs.cocoapods.org/specification.html
 #
 Pod::Spec.new do |s|
-  s.name         = "mg-ios-bloom"
+  s.name         = "XMPPFramework"
   s.version      = "0.0.1"
   s.summary      = "A short description of MGDablooms."
   # s.description  = <<-DESC
