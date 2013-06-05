@@ -61,7 +61,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Extensions' do |extensions|
     extensions.dependency 'XMPPFramework/Core'
-    extensions.source_files = FileList['Extensions/**/*.{h,m}'].exclude('Extensions/**/XMPPRoster.m', 'Extensions/**/XMPPMessageArchiving.m', 'Extensions/**/XMPPJabberRPCModule.m', 'Extensions/**/XMPPvCardTemp.m')
+    extensions.source_files = FileList['Extensions/XEP-0199/*.{h,m}']
   end
 
   s.subspec 'Authentication' do |authentication|
