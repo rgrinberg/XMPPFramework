@@ -58,7 +58,12 @@ Pod::Spec.new do |s|
     core.dependency 'CocoaLumberjack','~>1.6'
     core.dependency 'CocoaAsyncSocket','~>0.0.1'
   end
-  
+
+  s.subspec 'Extensions' do |extensions|
+    categories.dependency 'XMPPFramework/Core'
+    extensions.source_files = FileList['Extensions/**/*.{h,m}']
+  end
+
   s.subspec 'Authentication' do |authentication|
    authentication.source_files =  'Authentication/**/*.{h,m}'
    authentication.dependency 'XMPPFramework/Core'
