@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
   # path will automatically have '*.{h,m,mm,c,cpp}' appended.
   #
   s.source_files =  '*.{h,m,c}', '**/*.{h,m,c}', '**/**/*.{h,m,c}'
-  s.exclude_files = 'Vendor'
+  s.exclude_files = 'Vendor', 'Xcode'
 
   # A list of file patterns which select the header files that should be
   # made available to the application. If the pattern is a directory then the
