@@ -60,7 +60,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Extensions' do |extensions|
-    categories.dependency 'XMPPFramework/Core'
+    extensions.dependency 'XMPPFramework/Core'
     extensions.source_files = FileList['Extensions/**/*.{h,m}']
   end
 
