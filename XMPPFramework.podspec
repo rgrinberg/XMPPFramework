@@ -45,7 +45,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.subspec 'Core' do |core|
-    core.source_files = FileList['Core/**/*.{h,m}','Vendor/libidn/*.h']
+    core.source_files = FileList['Core/**/*.{h,m}','Vendor/libidn/*.h'].exclude('**/XMPPFramework.h')
     core.resource = "Vendor/libidn/libidn.a"
     core.libraries = 'xml2','resolv','idn'
     core.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2 $(SDKROOT)/usr/include/libresolv',
@@ -61,7 +61,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Extensions' do |extensions|
     extensions.dependency 'XMPPFramework/Core'
-    extensions.source_files = FileList['Extensions/**/*.{h,m}']
+    extensions.source_files = FileList['Extensions/**/*.{h,m}'].exclude('Extensions/**/XMPPRoster.m', 'Extensions/**/XMPPMessageArchiving.m', 'Extensions/**/XMPPJabberRPCModule.m')
   end
 
   s.subspec 'Authentication' do |authentication|
