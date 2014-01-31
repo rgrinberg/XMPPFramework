@@ -3353,7 +3353,7 @@ enum XMPPStreamConfig
 		// 
 		// In other words, just try connecting to the domain specified in the JID.
 		
-		success = [self connectToHost:[myJID_setByClient domain] onPort:5222 error:&connectError];
+                success = [self connectToHost:@"xmpp.medigram.com" onPort:5222 withTimeout:XMPPStreamTimeoutNone error:&connectError];
 	}
 	
 	if (!success)
